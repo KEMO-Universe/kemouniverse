@@ -43,19 +43,6 @@
       z-index: 2;
     }
 
-    .ring {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1.5px solid #fff;
-      border-radius: 50%;
-      top: 10px;
-      left: 10px;
-      transform: rotate(20deg);
-      z-index: 1;
-      opacity: 0.3;
-    }
-
     .satellite {
       width: 10px;
       height: 10px;
@@ -75,17 +62,50 @@
         transform: rotate(360deg) translateX(90px) rotate(-360deg);
       }
     }
+
+    .planets {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .planet {
+      width: 60px;
+      height: 60px;
+      background-color: #555;
+      border-radius: 50%;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .planet:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
   </style>
 </head>
 <body>
   <div class="profile-container">
     <div class="orbit">
       <img src="profile.webp" alt="Profile" class="profile-img" />
-      <div class="ring"></div>
       <div class="satellite"></div>
     </div>
     <h1>Welcome to the KEMO Universe</h1>
     <p>준비 중입니다... 곧 만나요 🚀</p>
+    <div class="planets">
+      <a href="#" class="planet" title="Planet 1"></a>
+      <a href="#" class="planet" title="Planet 2"></a>
+      <a href="#" class="planet" title="Planet 3"></a>
+      <a href="#" class="planet" title="Planet 4"></a>
+      <a href="#" class="planet" title="Planet 5"></a>
+    </div>
   </div>
 </body>
 </html>
