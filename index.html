@@ -20,10 +20,72 @@
       font-size: 18px;
       color: #aaa;
     }
+    .profile-container {
+      position: relative;
+      width: 200px;
+      margin: 0 auto 40px;
+    }
+
+    .orbit {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      z-index: 2;
+    }
+
+    .ring {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      top: 10px;
+      left: 10px;
+      transform: rotate(20deg);
+      z-index: 1;
+      opacity: 0.3;
+    }
+
+    .satellite {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 95px;
+      animation: orbit 5s linear infinite;
+    }
+
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg) translateX(90px) rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg) translateX(90px) rotate(-360deg);
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to the KEMO Universe</h1>
-  <p>준비 중입니다... 곧 만나요 🚀</p>
+  <div class="profile-container">
+    <div class="orbit">
+      <img src="profile.jpg" alt="Profile" class="profile-img" />
+      <div class="ring"></div>
+      <div class="satellite"></div>
+    </div>
+    <h1>Welcome to the KEMO Universe</h1>
+    <p>준비 중입니다... 곧 만나요 🚀</p>
+  </div>
 </body>
 </html>
